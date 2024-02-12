@@ -4,12 +4,13 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
+import Link from '@mui/material/Button';
 import CartWidget from './CartWidget';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import { NavLink } from 'react-router-dom';
 
 
-const pages = ['Productos', 'Asesoramiento', 'Nosotros'];
+const pages = ['GamePad', 'Joystick', 'VR'];
 
 const NavBar = () => {
     const handleNameSection = (section) =>{
@@ -39,15 +40,32 @@ const NavBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                // onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Link>
+            <NavLink
+              to="/category/Joystick"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Joystick
+            </NavLink>
+            <NavLink
+              to="/category/GamePad"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Gamepad
+            </NavLink>
+            <NavLink
+              to="/category/VR"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              VR
+            </NavLink>
+            </Link>
           </Box>
           <CartWidget handleNameSection={handleNameSection}/>
         </Toolbar>

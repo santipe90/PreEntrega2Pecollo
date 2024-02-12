@@ -26,6 +26,7 @@
     border-radius: 20px;
     box-shadow: -4px 2px 40px 0px gray;
     padding: 10px;
+    display: inline-table;
 }
 
 .item-detail{

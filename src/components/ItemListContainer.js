@@ -1,33 +1,34 @@
 import './styled.css'
 import { useEffect, useState } from 'react';
-import { getProducts } from '../serverMock/productMock';
-import Carousel from 'react-material-ui-carousel'
+import { useParams } from 'react-router-dom';
+import { getProducts, getProductById } from '../serverMock/productMock';
 import ItemList from '../components/ItemList'
 
 function ItemListContainer ({ greeting }) {
     const [items, setItems] = useState ([]);
 
+    const { categoryId } = useParams()
+
     useEffect (() => {
-        /*getProducts()
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err.message));*/
-        const fetchProducts = async () => {
-            try {
-                const res = await getProducts();
-                setItems(res);
-            } catch (err) {
-                console.log(err.message);
-            }
-        };
-        fetchProducts();
-    }, []);
+
+        const asyncFunc = categoryId ? getProductById : getProducts
+
+         asyncFunc (categoryId)
+         .then(response => {
+            setItems(response)
+         })
+         .catch(error => {
+            console.error(error)
+         })
+            
+        }, [categoryId])
 
 return (
     <div className='container'>
     <h1 className='title'>{greeting}</h1>
-        <ItemList items={items}/>
+        <ItemList id={1} items={items}/>
     </div>
-    );
+    ); 
 }
 
 export default ItemListContainer;

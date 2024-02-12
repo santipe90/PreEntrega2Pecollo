@@ -14,7 +14,7 @@ const Item = ({item}) => {
                 <p> {price} </p>
                 {/* <ItemCount stock={stock} initial={0}></ItemCount> */}
                     <Link 
-                        to={`/category/${id}`}>
+                        to={`/item/${id}`}>
                             Ver Detalle 
                     </Link>
             </div>           
