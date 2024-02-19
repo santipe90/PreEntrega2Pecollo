@@ -1,9 +1,11 @@
+import React, { useEffect } from 'react';
 import { Paper, Button } from '@mui/material'
 import { Link } from 'react-router-dom'
 import ItemCount from './ItemCount';
 
 const Item = ({item}) => {
     const {id, name, description, stock, price, img} = item;
+
     return (
         <Paper> 
             <div key={id} className="item">

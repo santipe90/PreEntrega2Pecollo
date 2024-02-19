@@ -33,7 +33,7 @@ Enhanced Audio and Comfort: Equipped with a 3.5mm audio interface for seamless c
     });
   };
 
-  export const getProductById = (categoryId) => {
+  export const getProductByCategory = (categoryId) => {
     return new Promise ((resolve) => {
       setTimeout(() => {
         resolve([products.find(prod => prod.categoryId == categoryId)])
@@ -41,3 +41,10 @@ Enhanced Audio and Comfort: Equipped with a 3.5mm audio interface for seamless c
     })
   }
   
+  export const getProductById = (id) => {
+    return new Promise ((resolve) => {
+      setTimeout(() => {
+        resolve(products.find(prod => prod.id == id))
+      }, 2000)
+    })
+  }

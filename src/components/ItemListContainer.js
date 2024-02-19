@@ -1,7 +1,7 @@
 import './styled.css'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProducts, getProductById } from '../serverMock/productMock';
+import { getProducts, getProductByCategory } from '../serverMock/productMock';
 import ItemList from '../components/ItemList'
 
 function ItemListContainer ({ greeting }) {
@@ -11,7 +11,7 @@ function ItemListContainer ({ greeting }) {
 
     useEffect (() => {
 
-        const asyncFunc = categoryId ? getProductById : getProducts
+        const asyncFunc = categoryId ? getProductByCategory : getProducts
 
          asyncFunc (categoryId)
          .then(response => {
@@ -26,7 +26,7 @@ function ItemListContainer ({ greeting }) {
 return (
     <div className='container'>
     <h1 className='title'>{greeting}</h1>
-        <ItemList id={1} items={items}/>
+        <ItemList key={1} items={items}/>
     </div>
     ); 
 }
