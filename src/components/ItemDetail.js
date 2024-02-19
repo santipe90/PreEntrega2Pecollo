@@ -13,7 +13,7 @@ const ItemDetail = ({product}) => {
                 <p> {product.description} </p>
                 <p> {product.stock} </p>
                 <p> {product.price} </p>
-                <p> {product.info} </p>
+                
             </div>           
             </div>
         </Paper>
