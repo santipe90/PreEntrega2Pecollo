@@ -1,4 +1,5 @@
 import { useState } from 'react' 
+import Box from '@mui/material/Box';
 
 const ItemCount = ({stock, initial, onAdd})=> {
     const [quantity, setQuantity] = useState(initial)
@@ -15,6 +16,16 @@ const ItemCount = ({stock, initial, onAdd})=> {
     }
 
     return(
+        <Box
+        height={200}
+        width={200}
+        my={4}
+        display="flex"
+        alignItems="center"
+        gap={4}
+        p={2}
+        sx={{ border: '2px solid grey' }}
+      >
         <div className ='Counter'>
         <div className='Controls'>
         <button className='Button' onClick={decrement}>-</button>
@@ -26,6 +37,7 @@ const ItemCount = ({stock, initial, onAdd})=> {
             </button>
         </div>
         </div>
+        </Box>
     )
 }
 
