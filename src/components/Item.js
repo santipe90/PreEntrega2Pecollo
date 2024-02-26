@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Paper, Button } from '@mui/material'
 import { Link } from 'react-router-dom'
-import ItemCount from './ItemCount';
+import ItemCount from './ItemCount/ItemCount';
 
 const Item = ({item}) => {
     const {id, name, description, stock, price, img} = item;

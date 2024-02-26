@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import './styled.css'
+import '../ItemDetail/ItemDetail.css'
 import { Paper } from '@mui/material'
-import ItemCount from './ItemCount'
+import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({product}) => {
   const [quantityAdded, setQuantityAdded] = useState(0)
@@ -27,3 +27,4 @@ const ItemDetail = ({product}) => {
 }
 
 export default ItemDetail
+
