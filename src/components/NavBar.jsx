@@ -29,7 +29,7 @@ const NavBar = () => {
             sx={{
               mr: 4,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              fontFamily: 'roboto',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -39,7 +39,7 @@ const NavBar = () => {
             MR ROBOT
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', padding: '8px' } }}>
             <Link>
             <NavLink
               to="/category/Joystick"

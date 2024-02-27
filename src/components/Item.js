@@ -1,7 +1,10 @@
+import './styled.css'
 import React, { useEffect } from 'react';
-import { Paper, Button } from '@mui/material'
+import { Paper } from '@mui/material';
+import  Button  from '../commons/Button'
 import { Link } from 'react-router-dom'
-import ItemCount from './ItemCount';
+
+
 
 const Item = ({item}) => {
     const {id, name, description, stock, price, img} = item;
@@ -14,11 +17,13 @@ const Item = ({item}) => {
                 <p> {description} </p>
                 <p> {stock} </p>
                 <p> {price} </p>
-                {/* <ItemCount stock={stock} initial={0}></ItemCount> */}
-                    <Link 
-                        to={`/item/${id}`}>
-                            Ver Detalle 
-                    </Link>
+                     
+            <Link 
+            to={`/item/${id}`}> 
+            <Button className="button-34"> Ver Detalle</Button>     
+            </Link>
+                    
+                  
             </div>           
             
         </Paper>
